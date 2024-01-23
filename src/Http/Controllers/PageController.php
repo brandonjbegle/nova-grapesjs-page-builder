@@ -3,7 +3,7 @@
 namespace BrandonJBegle\NovaGrapesjsPageBuilder\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Page;
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
