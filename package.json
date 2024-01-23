@@ -1,0 +1,37 @@
+{
+    "private": true,
+    "scripts": {
+      "dev": "npm run development",
+      "development": "mix",
+      "watch": "mix watch",
+      "watch-poll": "mix watch -- --watch-options-poll=1000",
+      "hot": "mix watch --hot",
+      "prod": "npm run production",
+      "production": "mix --production",
+      "nova:install": "npm --prefix='../../vendor/laravel/nova' ci"
+    },
+    "devDependencies": {
+      "@vue/compiler-sfc": "^3.2.22",
+      "laravel-mix": "^6.0.41",
+      "postcss": "^8.3.11",
+      "vue-loader": "^16.8.3"
+    },
+    "dependencies": {
+        "grapesjs": "^0.21.5",
+        "grapesjs-aviary": "^0.1.2",
+        "grapesjs-blocks-basic": "^1.0.2",
+        "grapesjs-blocks-flexbox": "^1.0.1",
+        "grapesjs-component-countdown": "^1.0.2",
+        "grapesjs-custom-code": "^1.0.1",
+        "grapesjs-navbar": "^1.0.2",
+        "grapesjs-plugin-export": "^1.0.11",
+        "grapesjs-plugin-filestack": "^0.1.1",
+        "grapesjs-plugin-forms": "^2.0.1",
+        "grapesjs-preset-webpage": "^1.0.2",
+        "grapesjs-style-bg": "^1.0.5",
+        "grapesjs-table": "^1.0.8",
+        "grapesjs-tabs": "^1.0.6",
+        "grapesjs-tooltip": "^0.1.8",
+        "grapesjs-tui-image-editor": "^1.0.1"
+    }
+}

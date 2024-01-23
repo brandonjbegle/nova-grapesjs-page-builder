@@ -1,0 +1,22 @@
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
+ */
+
+/*! grapesjs - 0.20.4 */
+
+/*! grapesjs-plugin-forms - 2.0.1 */
+
+/*! grapesjs-style-bg - 1.0.5 */
+
+/*! grapesjs-style-gradient - 2.0.14 */
+
+/*! grapesjs-table - 1.0.8 */
+
+/*! grapesjs-tabs - 1.0.6 */
+
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
