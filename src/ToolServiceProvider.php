@@ -1,8 +1,8 @@
 <?php
 
-namespace Begleweyer\Nova3GrapesjsPageBuilder;
+namespace BrandonJBegle\NovaGrapesjsPageBuilder;
 
-use Begleweyer\Nova3GrapesjsPageBuilder\Http\Middleware\Authorize;
+use BrandonJBegle\NovaGrapesjsPageBuilder\Http\Middleware\Authorize;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;

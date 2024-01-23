@@ -1,8 +1,8 @@
 <?php
 
-namespace Begleweyer\Nova3GrapesjsPageBuilder\Http\Middleware;
+namespace BrandonJBegle\NovaGrapesjsPageBuilder\Http\Middleware;
 
-use Begleweyer\Nova3GrapesjsPageBuilder\Nova3GrapesjsPageBuilder;
+use BrandonJBegle\NovaGrapesjsPageBuilder\Nova3GrapesjsPageBuilder;
 use Laravel\Nova\Nova;
 
 class Authorize

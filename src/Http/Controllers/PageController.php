@@ -1,6 +1,6 @@
 <?php
 
-namespace Begleweyer\Nova3GrapesjsPageBuilder\Http\Controllers;
+namespace BrandonJBegle\NovaGrapesjsPageBuilder\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Page;

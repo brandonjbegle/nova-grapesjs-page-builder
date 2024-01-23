@@ -1,6 +1,6 @@
 <?php
 
-namespace Begleweyer\Nova3GrapesjsPageBuilder;
+namespace BrandonJBegle\NovaGrapesjsPageBuilder;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Menu\MenuSection;
