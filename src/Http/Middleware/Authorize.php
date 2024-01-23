@@ -2,7 +2,7 @@
 
 namespace BrandonJBegle\NovaGrapesjsPageBuilder\Http\Middleware;
 
-use BrandonJBegle\NovaGrapesjsPageBuilder\Nova3GrapesjsPageBuilder;
+use BrandonJBegle\NovaGrapesjsPageBuilder\NovaGrapesjsPageBuilder;
 use Laravel\Nova\Nova;
 
 class Authorize
@@ -29,6 +29,6 @@ class Authorize
      */
     public function matchesTool($tool)
     {
-        return $tool instanceof Nova3GrapesjsPageBuilder;
+        return $tool instanceof NovaGrapesjsPageBuilder;
     }
 }

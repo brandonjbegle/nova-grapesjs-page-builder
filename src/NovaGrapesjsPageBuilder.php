@@ -7,7 +7,7 @@ use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 
-class Nova3GrapesjsPageBuilder extends Tool
+class NovaGrapesjsPageBuilder extends Tool
 {
     /**
      * Perform any tasks that need to happen when the tool is booted.

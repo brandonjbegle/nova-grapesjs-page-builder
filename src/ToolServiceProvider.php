@@ -18,7 +18,6 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-3-grapesjs-page-builder');
 
         $this->app->booted(function () {
             $this->routes();
@@ -40,7 +39,7 @@ class ToolServiceProvider extends ServiceProvider
             return;
         }
 
-        Nova::router(['nova', Authenticate::class, \Begleweyer\FaviconSelector\Http\Middleware\Authorize::class], 'page-builder')
+        Nova::router(['nova', Authenticate::class], 'page-builder')
             ->group(__DIR__ . '/../routes/inertia.php');
 
         Route::middleware(['nova', Authorize::class])
