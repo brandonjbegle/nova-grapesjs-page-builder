@@ -10,11 +10,13 @@ class PageController extends Controller
 {
     public function getHtml($id)
     {
+        // Todo Brandon: Get model from a config (or a default class)
         $page = Page::where('id', '=', $id)->first();
         if (! $page) {
             abort(404);
         }
 
+        // Todo Brandon: Get fields from a config (or a default class & migrations)
         return response()->json([
             'content' => $page ? $page->content : null,
             'custom_css' => $page ? $page->custom_css : null,
@@ -23,11 +25,13 @@ class PageController extends Controller
 
     public function storeTemp(Request $request, $id)
     {
+        // Todo Brandon: Get model from a config (or a default class)
         $page = Page::where('id', '=', $id)->first();
         if (! $page) {
             abort(404);
         }
 
+        // Todo Brandon: Get fields from a config (or a default class & migrations)
         $page->temp_content = $request->get('content');
         $page->temp_custom_css = $request->get('css');
 
@@ -38,10 +42,12 @@ class PageController extends Controller
 
     public function storePage(Request $request, $id)
     {
+        // Todo Brandon: Get model from a config (or a default class)
         $page = Page::where('id', '=', $id)->first();
         if (! $page) {
             abort(404);
         }
+        // Todo Brandon: Get fields from a config (or a default class & migrations)
 
         $page->temp_content = $request->get('content');
         $page->content = $request->get('content');

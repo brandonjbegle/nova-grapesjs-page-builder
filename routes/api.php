@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+    use BrandonJBegle\NovaGrapesjsPageBuilder\Http\Controllers\PageController;
+    use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/page/{id}', [\Begleweyer\Nova3GrapesjsPageBuilder\Http\Controllers\PageController::class, 'getHtml']);
-Route::post('/page/{id}/temp', [\Begleweyer\Nova3GrapesjsPageBuilder\Http\Controllers\PageController::class, 'storeTemp']);
-Route::post('/page/{id}/save', [\Begleweyer\Nova3GrapesjsPageBuilder\Http\Controllers\PageController::class, 'storePage']);
+Route::get('/page/{id}', [PageController::class, 'getHtml']);
+Route::post('/page/{id}/temp', [PageController::class, 'storeTemp']);
+Route::post('/page/{id}/save', [PageController::class, 'storePage']);
