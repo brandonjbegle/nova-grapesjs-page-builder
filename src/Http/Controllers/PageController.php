@@ -3,15 +3,15 @@
 namespace BrandonJBegle\NovaGrapesjsPageBuilder\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Page;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    // Todo Brandon: Still need to make default migrations
     public function getHtml($id)
     {
-        // Todo Brandon: Get model from a config (or a default class)
-        $page = Page::where('id', '=', $id)->first();
+        $pageModel = config('nova-grapesjs-page-builder.page-model');
+        $page = $pageModel::where('id', '=', $id)->first();
         if (! $page) {
             abort(404);
         }
@@ -25,8 +25,8 @@ class PageController extends Controller
 
     public function storeTemp(Request $request, $id)
     {
-        // Todo Brandon: Get model from a config (or a default class)
-        $page = Page::where('id', '=', $id)->first();
+        $pageModel = config('nova-grapesjs-page-builder.page-model');
+        $page = $pageModel::where('id', '=', $id)->first();
         if (! $page) {
             abort(404);
         }
@@ -43,7 +43,8 @@ class PageController extends Controller
     public function storePage(Request $request, $id)
     {
         // Todo Brandon: Get model from a config (or a default class)
-        $page = Page::where('id', '=', $id)->first();
+        $pageModel = config('nova-grapesjs-page-builder.page-model');
+        $page = $pageModel::where('id', '=', $id)->first();
         if (! $page) {
             abort(404);
         }

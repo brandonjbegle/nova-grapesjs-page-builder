@@ -18,6 +18,12 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+
+            $this->publishes([
+                __DIR__ . '/../config' => config_path(),
+            ], 'nova-grapesjs-page-builder');
+        }
 
         $this->app->booted(function () {
             $this->routes();
@@ -54,6 +60,6 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(__DIR__ . '/../config/nova-grapesjs-page-builder', 'nova-grapesjs-page-builder');
     }
 }

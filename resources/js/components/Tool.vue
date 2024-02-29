@@ -69,6 +69,7 @@ import 'grapesjs/dist/css/grapes.min.css'
 let editor
 
 export default {
+  // Todo Brandon: Need to pass the css path into here via the config
   metaInfo () {
     return {
       title: 'Page Editor'
@@ -78,6 +79,10 @@ export default {
     id: {
       type: Number,
       default: null
+    },
+    appCss: {
+      type: String,
+      default: ''
     }
   },
   data () {
@@ -98,7 +103,14 @@ export default {
     }
 
     const random = (Math.random() * 1000000000).toFixed(0)
-    const style = window.location.protocol + '//' + window.location.host + '/css/app.bundle.css?id=' + random
+    // const style = window.location.protocol + '//' + window.location.host + '/css/app.bundle.css?id=' + random
+
+    const style = this.appCss
+
+    const styles = [];
+
+    if(style)
+      styles.push(style)
 
     editor = grapesjs.init({
       container: '#editor',
@@ -129,7 +141,7 @@ export default {
         custom
       ],
       canvas: {
-        styles: [style]
+        styles: styles
       },
       selectorManager: {
         componentFirst: true
