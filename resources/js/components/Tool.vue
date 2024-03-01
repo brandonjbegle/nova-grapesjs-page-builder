@@ -83,14 +83,18 @@ export default {
     appCss: {
       type: String,
       default: ''
+    },
+    assetManagerAssets: {
+      type: Array,
+      default(){
+        return []
+      }
     }
   },
   data () {
     return {}
   },
   async mounted () {
-    console.log('id')
-    console.log(this.id)
     if (!this.id) {
       window.location.href = '/404'
     }
@@ -113,6 +117,9 @@ export default {
       styles.push(style)
 
     editor = grapesjs.init({
+      assetManager: {
+        assets: this.assetManagerAssets
+      },
       container: '#editor',
       storageManager: { autoload: 0 },
       pluginsOpts: {
