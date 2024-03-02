@@ -14,24 +14,17 @@
         // Todo Brandon: need a way to delete an image.. Is there an endpoint for that
         public function store(Request $request)
         {
-            $disk = config('nova-grapesjs-page-builder.asset-manager-disk');
+            $files = $request->file('files');
 
-            $file = $request->file('files');
-
-            $fileName = Uuid::uuid4().'.'.$file->getClientOriginalExtension();
-
-            list($fileWidth, $fileHeight) = getimagesize($file->getRealPath());
-
-            $path = Storage::disk($disk)->put($fileName, $file);
+            if (is_array($files)) {
+                foreach ($files as $file) {
+                    $this->createFile($file);
+                }
+            } else {
+                $this->createFile($files);
+            }
 
             $assetModel = config('nova-grapesjs-page-builder.asset-model');
-
-            $assetModel::create([
-                'disk'   => $disk,
-                'path'   => $path,
-                'height' => $fileHeight,
-                'width'  => $fileWidth
-            ]);
 
             $assets = $assetModel::all();
 
@@ -45,6 +38,25 @@
 
             return response()->json([
                 'data' => $assets
+            ]);
+        }
+
+        protected function createFile($file)
+        {
+            $assetModel = config('nova-grapesjs-page-builder.asset-model');
+            $disk = config('nova-grapesjs-page-builder.asset-manager-disk');
+
+            $fileName = Uuid::uuid4().'.'.$file->getClientOriginalExtension();
+
+            list($fileWidth, $fileHeight) = getimagesize($file->getRealPath());
+
+            $path = Storage::disk($disk)->put($fileName, $file);
+
+            $assetModel::create([
+                'disk'   => $disk,
+                'path'   => $path,
+                'height' => $fileHeight,
+                'width'  => $fileWidth
             ]);
         }
     }

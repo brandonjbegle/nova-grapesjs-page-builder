@@ -19,4 +19,4 @@ Route::get('/page/{id}', [PageController::class, 'getHtml']);
 Route::post('/page/{id}/temp', [PageController::class, 'storeTemp']);
 Route::post('/page/{id}/save', [PageController::class, 'storePage']);
 
-Route::post('/asset-manager-upload', [AssetController::class, 'storeAsset']);
+Route::post('/asset-manager-upload', [AssetController::class, 'store']);
