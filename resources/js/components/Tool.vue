@@ -119,7 +119,8 @@ export default {
     editor = grapesjs.init({
       assetManager: {
         assets: this.assetManagerAssets,
-        upload: '/nova-vendor/nova-3-grapesjs-page-builder/asset-manager-upload/'
+        upload: '/nova-vendor/nova-3-grapesjs-page-builder/asset-manager-upload/',
+        uploadName: 'files'
       },
       container: '#editor',
       storageManager: { autoload: 0 },
