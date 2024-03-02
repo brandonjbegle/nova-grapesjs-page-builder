@@ -92,12 +92,16 @@ export default {
     }
   },
   data () {
-    return {}
+    return {
+      csrfToken: null
+    }
   },
   async mounted () {
     if (!this.id) {
       window.location.href = '/404'
     }
+
+    this.csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
     let res = null
     try {
@@ -120,6 +124,9 @@ export default {
       assetManager: {
         assets: this.assetManagerAssets,
         upload: '/nova-vendor/nova-3-grapesjs-page-builder/asset-manager-upload/',
+        headers: {
+          'X-CSRF-TOKEN': this.csrfToken
+        },
         uploadName: 'files'
       },
       container: '#editor',
