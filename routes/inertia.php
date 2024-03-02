@@ -14,12 +14,6 @@
                 'height' => 350,
                 'width'  => 250,
                 'name'   => 'displayName'
-            ],
-            [
-                'src'    => 'http://placehold.it/350x250/79c267/fff/image3.jpg',
-                'height' => 350,
-                'width'  => 250,
-                'name'   => 'displayName'
             ]
         ];
         $cssPath = config('nova-grapesjs-page-builder.app-css-path');

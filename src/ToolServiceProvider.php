@@ -19,9 +19,12 @@ class ToolServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-
             $this->publishes([
                 __DIR__ . '/../config' => config_path(),
+            ], 'nova-grapesjs-page-builder');
+
+            $this->publishes([
+                __DIR__ . '/../database/migrations/' => database_path('migrations'),
             ], 'nova-grapesjs-page-builder');
         }
 

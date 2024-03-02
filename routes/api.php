@@ -1,5 +1,6 @@
 <?php
 
+    use BrandonJBegle\NovaGrapesjsPageBuilder\Http\Controllers\AssetController;
     use BrandonJBegle\NovaGrapesjsPageBuilder\Http\Controllers\PageController;
     use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,5 @@
 Route::get('/page/{id}', [PageController::class, 'getHtml']);
 Route::post('/page/{id}/temp', [PageController::class, 'storeTemp']);
 Route::post('/page/{id}/save', [PageController::class, 'storePage']);
+
+Route::post('/asset-manager-upload', [AssetController::class, 'storeAsset']);
